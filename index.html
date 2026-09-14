@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Palak Gupta · Data to Product</title>
+<title>Palak Gupta | Product Data Analyst</title>
+<meta name="description" content="Product Data Analyst working across funnels, experimentation, and retention, with ML/AI depth to dig deeper when a dashboard isn't enough.">
+<meta property="og:title" content="Palak Gupta | Product Data Analyst">
+<meta property="og:description" content="Product Data Analyst working across funnels, experimentation, and retention, with ML/AI depth to dig deeper when a dashboard isn't enough.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -178,8 +181,10 @@ nav a.active::after{
 .exp-tags span{font-size:11.5px; border:1px solid var(--line); border-radius:20px; padding:3px 9px; color:var(--gray);}
 
 /* ===== SKILLS ===== */
-.skills-board{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:44px;}
-@media (max-width:900px){.skills-board{grid-template-columns:repeat(2,1fr);}}
+.skills-board{display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-top:44px;}
+.skill-note ul{gap:8px;}
+.skill-note li{font-size:13px; padding:5px 12px;}
+@media (max-width:700px){.skills-board{grid-template-columns:1fr;}}
 .skill-note{transform:rotate(var(--r,-1deg));}
 .skill-note h3{font-size:16px; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
 .skill-note ul{list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:6px;}
@@ -273,6 +278,81 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
 50%{transform:translateY(-8px)}
 }
 
+/* ===== CASE STUDY NOTEBOOK ===== */
+.notebook{
+  position:relative;
+  margin-top:36px;
+  background:#FDFCF7;
+  border:2px solid var(--ink);
+  border-radius:6px;
+  box-shadow:6px 6px 0 var(--ink);
+  padding:36px 34px 30px 62px;
+  background-image:linear-gradient(rgba(216,214,206,.55) 1px, transparent 1px);
+  background-size:100% 32px;
+}
+.notebook::before{
+  content:'';
+  position:absolute; left:14px; top:22px; bottom:22px; width:16px;
+  background-image:radial-gradient(circle at 8px 0, var(--paper) 5px, var(--ink) 5px 6.5px, transparent 6.5px);
+  background-size:16px 34px;
+  background-repeat:repeat-y;
+}
+.notebook-viewport{position:relative; perspective:1400px; min-height:280px;}
+.notebook-viewport.flipping{animation:pageFlip .46s ease;}
+@keyframes pageFlip{
+  0%{transform:rotateY(0deg);}
+  45%{transform:rotateY(6deg) scale(.99); opacity:.85;}
+  55%{transform:rotateY(-6deg) scale(.99); opacity:.85;}
+  100%{transform:rotateY(0deg); opacity:1;}
+}
+.notebook-page{display:none; position:relative; padding-right:8px;}
+.notebook-page.active{display:block;}
+.notebook-page::after{
+  content:''; position:absolute; top:-2px; right:-2px; width:0; height:0;
+  border-style:solid; border-width:0 20px 20px 0; border-color:transparent var(--paper) transparent transparent;
+  filter:drop-shadow(-1px 1px 1px rgba(0,0,0,.15));
+}
+.nb-head{display:flex; align-items:center; gap:14px; margin-bottom:10px;}
+.nb-icon{width:46px; height:46px; flex:0 0 auto;}
+.nb-num{font-family:'Caveat',cursive; font-size:16px; color:var(--gray); transform:rotate(-2deg); display:block; margin-bottom:-4px;}
+.notebook-page h3{font-size:27px; margin:0;}
+.notebook-page > p{max-width:66ch;}
+.nb-quote{
+  font-family:'Caveat',cursive; font-weight:600; font-size:20px; color:var(--ink);
+  border-left:3px solid var(--ink); padding:2px 0 2px 16px; margin:16px 0; max-width:64ch;
+}
+.nb-list{list-style:none; padding:0; margin:12px 0; display:flex; flex-direction:column; gap:7px;}
+.nb-list li{font-size:14.5px; color:var(--gray); padding-left:20px; position:relative; line-height:1.55;}
+.nb-list li::before{content:'▸'; position:absolute; left:0; top:0; color:var(--ink); font-weight:700;}
+.nb-steps{display:flex; flex-direction:column; gap:4px; margin:16px 0; max-width:420px;}
+.nb-steps .nb-step{border:1.5px solid var(--ink); border-radius:20px; padding:8px 16px; font-size:14px; font-weight:500; background:var(--paper); text-align:center;}
+.nb-steps .nb-arrow{text-align:center; color:var(--gray); font-size:15px;}
+.nb-segments{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; margin:14px 0;}
+.nb-segments div{border:1.5px solid var(--line); border-radius:4px; padding:10px 14px; font-size:13.5px; color:var(--gray);}
+.nb-segments strong{display:block; color:var(--ink); font-size:14px; margin-bottom:3px;}
+.nb-events{display:flex; flex-wrap:wrap; gap:6px; margin:14px 0;}
+.nb-events span{font-family:'Courier New',monospace; font-size:11.5px; background:var(--paper); border:1px solid var(--ink); border-radius:4px; padding:4px 8px; color:var(--ink);}
+.nb-table-wrap{overflow-x:auto; margin:16px 0;}
+.nb-table{border-collapse:collapse; width:100%; min-width:520px; font-size:13px;}
+.nb-table th,.nb-table td{border:1px solid var(--line); padding:8px 10px; text-align:left; color:var(--gray);}
+.nb-table th{color:var(--ink); font-weight:600; background:rgba(245,230,168,.25);}
+.nb-traps{display:flex; flex-direction:column; gap:10px; margin:14px 0;}
+.nb-trap{border-left:3px solid var(--pink); padding-left:14px;}
+.nb-trap strong{color:var(--ink); font-size:14.5px;}
+.nb-trap p{margin:2px 0 0; font-size:14px;}
+.nb-metrics-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0;}
+.nb-metrics-grid div{border:1.5px solid var(--line); border-radius:4px; padding:10px 12px;}
+.nb-metrics-grid strong{display:block; font-size:12px; text-transform:uppercase; letter-spacing:.03em; color:var(--gray); margin-bottom:4px;}
+.nb-metrics-grid span{font-size:13px; color:var(--ink);}
+.nb-source{font-size:12.5px; color:var(--gray); font-style:italic; margin-top:18px; border-top:1px dashed var(--line); padding-top:12px;}
+.notebook-controls{display:flex; align-items:center; justify-content:center; gap:18px; margin-top:26px;}
+.notebook-counter{font-family:'Caveat',cursive; font-size:18px; color:var(--gray);}
+.notebook-controls .btn:disabled{opacity:.35; cursor:default; box-shadow:none; transform:none;}
+@media (max-width:700px){
+  .notebook{padding:30px 20px 26px 42px;}
+  .notebook::before{width:12px; left:10px;}
+}
+
 </style>
 </head>
 <body>
@@ -294,17 +374,17 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
 
 <div class="hero-copy reveal">
 
-      <span class="eyebrow">// at the intersection of data, ML, and product</span>
+      <span class="eyebrow">// product analytics · experimentation · data</span>
       <h1>Hi, I'm Palak.</h1>
-      <div class="sub"><span class="role-mark">Data Analyst</span> · <span class="role-mark">ML Engineer</span> · <span class="role-mark">Product Strategist</span></div>
-      <p class="desc handwritten">I help teams make smarter decisions with data. I build ML systems that actually ship. I think like a PM and code like an engineer.</p>
+      <div class="sub"><span class="role-mark">Product</span>.<span class="role-mark">Data</span>.<span class="role-mark">Experimentation</span></div>
+      <p class="desc handwritten">I use data, experimentation, and ML to understand how users behave, then help teams decide what to build next.</p>
 
       <div class="card-row">
-        <div class="mini-card"><svg viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M7 9h4M7 12h6"/></svg><span>Analytics</span></div>
-        <div class="mini-card"><svg viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg><span>Machine Learning</span></div>
-        <div class="mini-card"><svg viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><path d="M4 19V9M10 19V4M16 19v-7"/></svg><span>Product Thinking</span></div>
         <div class="mini-card"><svg viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><path d="M3 18l5-6 4 4 6-9"/><circle cx="18" cy="7" r="2"/></svg><span>A/B Testing</span></div>
         <div class="mini-card"><svg viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><rect x="4" y="7" width="16" height="11" rx="2"/><circle cx="9" cy="12.5" r="1.4"/></svg><span>Funnels</span></div>
+        <div class="mini-card"><svg viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M7 9h4M7 12h6"/></svg><span>Analytics</span></div>
+        <div class="mini-card"><svg viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><path d="M4 19V9M10 19V4M16 19v-7"/></svg><span>Product Thinking</span></div>
+        <div class="mini-card"><svg viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg><span>Machine Learning</span></div>
       </div>
     </div>
   </div>
@@ -318,16 +398,16 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
 
     <div class="about-grid">
       <div class="about-copy reveal">
-        <p class="handwritten" style="max-width:560px;">I started as a Data Analyst (lots of SQL, lots of dashboards). Somewhere between building models and staring at funnels, I realized the most interesting part wasn't the chart—it was the decision someone made because of it.</p>
-        <p class="handwritten" style="max-width:560px; margin-top:16px;">So I chased that thread. Through freelance projects, into fintech, through A/B tests and cohorts. Until "data analyst" started feeling less like a title and more like training for something bigger. Started thinking like a PM. Asking "why" before "how." Seeing data as a tool for building products, not reporting metrics.</p>
-        <p class="handwritten" style="max-width:560px; margin-top:16px;">Now I split focus between three things: keeping the analytical rigor that got me here, building the ML instincts I picked up, and learning to ask product questions that change roadmaps. Still rewrite queries because joins feel inelegant. Still think a good dashboard is just a story told in numbers.</p>
+        <p class="handwritten" style="max-width:560px;">I started as a Data Analyst: lots of SQL, lots of dashboards. Somewhere between funnels and cohort tables, I realized the interesting part was never the chart. It was the decision someone made because of it.</p>
+        <p class="handwritten" style="max-width:560px; margin-top:16px;">That's the thread I've followed since: through freelance projects, into fintech, through A/B tests, retention cohorts, and RFM segmentation. Data stopped being something I reported and started being something I used to answer product questions: why users drop off, which segment to protect, what to test next.</p>
+        <p class="handwritten" style="max-width:560px; margin-top:16px;">Today I work as a <em>Product Data Analyst</em>: funnels, experimentation, and KPI frameworks are the day job. The ML/AI side is what I bring on top of that, not a separate career, a way to dig one layer deeper when a dashboard isn't enough to explain what's happening.</p>
       </div>
 
       <div class="about-asides reveal">
         <div class="sticky aside-note" style="--r:-2deg;"><div class="tape"></div><p class="hand" style="font-size:19px; margin:0;">runs on filter coffee and clean SQL joins</p></div>
         <div class="sticky aside-note" style="--r:1.5deg;"><div class="tape"></div><p class="hand" style="font-size:19px; margin:0;">believes every dataset has a story its owner hasn't noticed yet</p></div>
-        <div class="sticky aside-note" style="--r:-1deg;"><div class="tape"></div><p class="hand" style="font-size:19px; margin:0;">currently curious about autotech: Ola Electric, Ather, the whole space</p></div>
-        <div class="sticky aside-note" style="--r:2deg;"><div class="tape"></div><p class="hand" style="font-size:19px; margin:0;">thinks a good PM is a data analyst who learned to ask "so what" out loud</p></div>
+        <div class="sticky aside-note" style="--r:-1deg;"><div class="tape"></div><p class="hand" style="font-size:19px; margin:0;">measures a funnel fix by whether the roadmap changed, not by how clean the query was</p></div>
+        <div class="sticky aside-note" style="--r:2deg;"><div class="tape"></div><p class="hand" style="font-size:19px; margin:0;">still gets a small thrill from a chart that finally explains the weird number everyone noticed</p></div>
       </div>
     </div>
   </div>
@@ -342,20 +422,20 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
       
       <div style="padding:24px; background:#FDFDFB; border:2px solid #161616; border-radius:6px;">
         <h3 class="hand" style="font-size:20px; margin:0 0 8px 0;">Collections Messaging</h3>
-        <p class="handwritten" style="font-size:16px; margin:0 0 16px 0; color:var(--gray);">Designed & shipped SMS/WhatsApp campaigns via Interakt to reduce collections friction.</p>
-        <p class="handwritten" style="font-size:15px; margin:0; color:var(--gray); font-style:italic;">Owned: requirements → integration → deployment → monitoring</p>
+        <p class="handwritten" style="font-size:16px; margin:0 0 12px 0; color:var(--gray);">Designed & shipped SMS/WhatsApp campaigns via Interakt targeting at-risk repayment segments. Measured impact with a cohort comparison of pre- vs. post-campaign collection behavior, which showed enough of a pull-forward in payments to justify expanding automated retry sequencing.</p>
+        <p class="handwritten" style="font-size:15px; margin:0; color:var(--gray); font-style:italic;">Still live: campaign performance dashboard the collections team checks weekly to decide which segments get the next nudge sequence.</p>
       </div>
 
       <div style="padding:24px; background:#FDFDFB; border:2px solid #161616; border-radius:6px;">
         <h3 class="hand" style="font-size:20px; margin:0 0 8px 0;">Funnel Optimization</h3>
-        <p class="handwritten" style="font-size:16px; margin:0 0 16px 0; color:var(--gray);">Built A/B testing framework & analysis playbooks. Ran 5+ experiments on critical conversion moments.</p>
-        <p class="handwritten" style="font-size:15px; margin:0; color:var(--gray); font-style:italic;">Shipped: recommendations that informed product decisions</p>
+        <p class="handwritten" style="font-size:16px; margin:0 0 12px 0; color:var(--gray);">Built an A/B testing framework with power-analysis guardrails. Ran 5+ experiments on CTA copy, onboarding flow, and pricing presentation at core conversion moments, flagging underpowered tests before they shipped. Winning variants were adopted into the roadmap instead of shipped on a hunch.</p>
+        <p class="handwritten" style="font-size:15px; margin:0; color:var(--gray); font-style:italic;">Still in use: the framework is now the default gate the team runs funnel changes through before rollout.</p>
       </div>
 
       <div style="padding:24px; background:#FDFDFB; border:2px solid #161616; border-radius:6px;">
         <h3 class="hand" style="font-size:20px; margin:0 0 8px 0;">Retention Analytics</h3>
-        <p class="handwritten" style="font-size:16px; margin:0 0 16px 0; color:var(--gray);">Designed cohort analysis & RFM segmentation. Built retention dashboards identifying at-risk users.</p>
-        <p class="handwritten" style="font-size:15px; margin:0; color:var(--gray); font-style:italic;">Outcome: dashboards still in use. Informed 3+ strategy decisions.</p>
+        <p class="handwritten" style="font-size:16px; margin:0 0 12px 0; color:var(--gray);">Designed cohort analysis & RFM segmentation to separate at-risk users from healthy ones. Retention dashboards surfaced which segments were drifting toward churn earliest, which shaped where the team pointed re-engagement effort first instead of spreading it evenly.</p>
+        <p class="handwritten" style="font-size:15px; margin:0; color:var(--gray); font-style:italic;">Still live: dashboards used by product & growth for monthly retention reviews; the segmentation became the basis for a follow-up win-back messaging test.</p>
       </div>
 
     </div>
@@ -369,62 +449,13 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
     <h2 class="sec-title reveal">Projects</h2>
     
     <div class="proj-tabs reveal">
-      <button class="proj-tab active" onclick="filterProjects('ml')">Machine Learning</button>
-      <button class="proj-tab" onclick="filterProjects('product')">Product</button>
+      <button class="proj-tab active" onclick="filterProjects('product')">Product</button>
+      <button class="proj-tab" onclick="filterProjects('ml')">Machine Learning</button>
     </div>
 
     <div class="proj-grid">
-      <!-- ML PROJECT 1 -->
-      <div class="proj-card visible" data-category="ml">
-        <div class="proj-visual">
-          <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
-            <rect x="20" y="20" width="80" height="80" rx="4" stroke="#161616" stroke-width="2"/>
-            <circle cx="35" cy="35" r="4" fill="#161616"/><circle cx="50" cy="35" r="4" fill="#161616"/><circle cx="65" cy="35" r="4" fill="#161616"/>
-            <rect x="25" y="50" width="50" height="30" fill="none" stroke="#161616" stroke-width="2"/>
-            <path d="M110 50 L140 70 L110 90 Z" fill="#F5E6A8" stroke="#161616" stroke-width="2"/>
-            <circle cx="125" cy="70" r="3" fill="#161616"/>
-            <path d="M30 95 L50 115 L70 95" stroke="#161616" stroke-width="2" fill="none"/>
-          </svg>
-        </div>
-        <div>
-          <span class="proj-tag">intelligent recommendations</span>
-          <h3>LLM-Powered Recommendation Engine</h3>
-          <p>Give it user behavior, it learns to rank. Balances what people love with what makes money. Semantic embeddings that actually understand intent.</p>
-          <div class="proj-stack"><span>Python</span><span>Streamlit</span><span>Scikit-learn</span><span>Claude API</span></div>
-          <div style="display:flex; gap:12px; margin-top:16px;">
-            <a href="https://github.com/thepalakgupta/llm-recommendation-engine" target="_blank" class="btn">GitHub</a>
-            <a href="https://llm-recommendation-engine-system.streamlit.app/" target="_blank" class="btn">Live Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ML PROJECT 2 REMOVED -->
-
-      <!-- ML PROJECT 3 -->
-      <div class="proj-card visible" data-category="ml">
-        <div class="proj-visual">
-          <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
-            <rect x="25" y="25" width="35" height="90" rx="2" stroke="#161616" stroke-width="2"/>
-            <rect x="70" y="50" width="35" height="65" rx="2" stroke="#161616" stroke-width="2"/>
-            <rect x="115" y="35" width="35" height="80" rx="2" stroke="#161616" stroke-width="2"/>
-            <circle cx="42" cy="40" r="3" fill="#F5E6A8" opacity=".7"/><circle cx="87" cy="65" r="3" fill="#BFD7EA"/><circle cx="132" cy="50" r="3" fill="#F5E6A8"/>
-            <path d="M60 100 L120 100" stroke="#161616" stroke-width="2"/>
-          </svg>
-        </div>
-        <div>
-          <span class="proj-tag">optimize for profit</span>
-          <h3>Dynamic Pricing Optimizer</h3>
-          <p>Feed it price history and demand signals. It finds the sweet spot: maximize revenue without losing customers. Elasticity meets strategy.</p>
-          <div class="proj-stack"><span>Python</span><span>Streamlit</span><span>Scikit-learn</span><span>Scipy</span></div>
-          <div style="display:flex; gap:12px; margin-top:16px;">
-            <a href="https://github.com/thepalakgupta/dynamic-pricing-optimizer" target="_blank" class="btn">GitHub</a>
-            <a href="https://dynamic-pricing-optimization.streamlit.app/" target="_blank" class="btn">Live Demo</a>
-          </div>
-        </div>
-      </div>
-
       <!-- PRODUCT PROJECT 1: DEFAULT -->
-      <div class="proj-card" data-category="product">
+      <div class="proj-card visible" data-category="product">
         <div class="proj-visual">
           <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
             <rect x="30" y="25" width="70" height="90" rx="4" stroke="#161616" stroke-width="2"/>
@@ -440,12 +471,13 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
           <span class="proj-tag">from concept to GTM</span>
           <h3>DEFAULT Skincare System</h3>
           <p>Built a skincare brand from the ground up. PRD, personas, roadmap, full-funnel KPI framework. The project that pulled me toward product thinking in the first place.</p>
+          <p style="font-weight:600; margin-top:10px;"><strong>Impact:</strong> Forced end-to-end product ownership, persona to funnel KPI, outside any existing company's guardrails; the project that shifted me from reporting metrics to owning a roadmap.</p>
           <div class="proj-stack"><span>Product Strategy</span><span>PRD Writing</span><span>Funnel Analytics</span><span>Competitive Analysis</span><span>Go-To-Market</span></div>
         </div>
       </div>
 
       <!-- PRODUCT PROJECT 2: RICE -->
-      <div class="proj-card" data-category="product">
+      <div class="proj-card visible" data-category="product">
         <div class="proj-visual">
           <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
             <circle cx="60" cy="70" r="40" fill="none" stroke="#161616" stroke-width="2"/>
@@ -457,13 +489,67 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
           </svg>
         </div>
         <div>
-          <span class="proj-tag">ship what matters</span>
+          <span class="proj-tag">reach · impact · confidence · effort</span>
           <h3>Feature Prioritization Engine (RICE)</h3>
           <p>Numbers meet strategy. RICE scoring with Claude API reasoning. Cuts through the noise to help teams say no to good ideas and yes to great ones.</p>
+          <p style="font-weight:600; margin-top:10px;"><strong>Beyond prioritization:</strong> A RICE score answers "what should we build next"; it doesn't answer "were we right." This tool pairs every scored feature with the metric that would prove the call: reach, impact, confidence, and effort feed the decision; a measurement plan feeds accountability for it.</p>
           <div class="proj-stack"><span>Python</span><span>Streamlit</span><span>Claude API</span><span>Pandas</span></div>
           <div style="display:flex; gap:12px; margin-top:16px;">
             <a href="https://github.com/thepalakgupta/rice-prioritization-engine" target="_blank" class="btn">GitHub</a>
             <a href="https://rice-prioritization-engine.streamlit.app/" target="_blank" class="btn">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ML PROJECT 1 -->
+      <div class="proj-card" data-category="ml">
+        <div class="proj-visual">
+          <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
+            <rect x="20" y="20" width="80" height="80" rx="4" stroke="#161616" stroke-width="2"/>
+            <circle cx="35" cy="35" r="4" fill="#161616"/><circle cx="50" cy="35" r="4" fill="#161616"/><circle cx="65" cy="35" r="4" fill="#161616"/>
+            <rect x="25" y="50" width="50" height="30" fill="none" stroke="#161616" stroke-width="2"/>
+            <path d="M110 50 L140 70 L110 90 Z" fill="#F5E6A8" stroke="#161616" stroke-width="2"/>
+            <circle cx="125" cy="70" r="3" fill="#161616"/>
+            <path d="M30 95 L50 115 L70 95" stroke="#161616" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div>
+          <span class="proj-tag">intelligent recommendations</span>
+          <h3>LLM-Powered Recommendation Engine</h3>
+          <p><strong>Product problem:</strong> users scroll past products they'd actually want because ranking is generic, not personalized.</p>
+          <p style="margin-top:8px;"><strong>Analytical question:</strong> does a smarter ranking system change what users click and buy, not just what looks technically impressive?</p>
+          <p style="margin-top:8px;"><strong>Solution:</strong> an LLM-assisted recommendation engine that ranks by learned user behavior, using semantic embeddings to capture intent rather than keyword overlap.</p>
+          <p style="margin-top:8px; font-style:italic;"><strong>Product metrics (proposed: this is a demo, not a production rollout):</strong> recommendation CTR, conversion after exposure, and repeat usage, the metrics a team would track before calling a ranking change "better."</p>
+          <div class="proj-stack"><span>Python</span><span>Streamlit</span><span>Scikit-learn</span><span>Claude API</span></div>
+          <div style="display:flex; gap:12px; margin-top:16px;">
+            <a href="https://github.com/thepalakgupta/llm-recommendation-engine" target="_blank" class="btn">GitHub</a>
+            <a href="https://llm-recommendation-engine-system.streamlit.app/" target="_blank" class="btn">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ML PROJECT 3 -->
+      <div class="proj-card" data-category="ml">
+        <div class="proj-visual">
+          <svg width="180" height="140" viewBox="0 0 180 140" fill="none">
+            <rect x="25" y="25" width="35" height="90" rx="2" stroke="#161616" stroke-width="2"/>
+            <rect x="70" y="50" width="35" height="65" rx="2" stroke="#161616" stroke-width="2"/>
+            <rect x="115" y="35" width="35" height="80" rx="2" stroke="#161616" stroke-width="2"/>
+            <circle cx="42" cy="40" r="3" fill="#F5E6A8" opacity=".7"/><circle cx="87" cy="65" r="3" fill="#BFD7EA"/><circle cx="132" cy="50" r="3" fill="#F5E6A8"/>
+            <path d="M60 100 L120 100" stroke="#161616" stroke-width="2"/>
+          </svg>
+        </div>
+        <div>
+          <span class="proj-tag">optimize for profit</span>
+          <h3>Dynamic Pricing Optimizer</h3>
+          <p><strong>Product problem:</strong> pricing decisions made on intuition, not on how demand actually responds to price changes.</p>
+          <p style="margin-top:8px;"><strong>Analytical question:</strong> where's the price point that grows revenue without pushing customers away, and how would we know if we're wrong?</p>
+          <p style="margin-top:8px;"><strong>Solution:</strong> feed it price history and demand signals; it finds the sweet spot between maximizing revenue and retaining customers. Elasticity meets strategy.</p>
+          <p style="margin-top:8px; font-style:italic;"><strong>Product metrics (proposed: this is a demo, not a production rollout):</strong> revenue per user, conversion at each price point, and cancellation rate after a price change, the guardrails that would sit alongside any pricing experiment.</p>
+          <div class="proj-stack"><span>Python</span><span>Streamlit</span><span>Scikit-learn</span><span>Scipy</span></div>
+          <div style="display:flex; gap:12px; margin-top:16px;">
+            <a href="https://github.com/thepalakgupta/dynamic-pricing-optimizer" target="_blank" class="btn">GitHub</a>
+            <a href="https://dynamic-pricing-optimization.streamlit.app/" target="_blank" class="btn">Live Demo</a>
           </div>
         </div>
       </div>
@@ -482,10 +568,10 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
         <div class="exp-head"><h3>ZAVO</h3><span>Dec 2025 – Jul 2026</span></div>
         <div class="exp-role">Data Analyst · Fintech</div>
         <ul class="exp-bullets">
-          <li>Owned KPI framework across full acquisition-to-conversion funnel; defined north star metrics enabling data-driven product prioritization.</li>
-          <li>Ran end-to-end A/B tests on product flows; identified winning variants and drove adoption into roadmap, delivering measurable conversion improvements.</li>
-          <li>Performed journey analysis identifying high-impact drop-off points; translated findings into specific UX/product recommendations actioned in sprints.</li>
-          <li>Built interactive Power BI dashboards consolidating funnel metrics; enabled shift from static reports to real-time exploratory analysis.</li>
+          <li>Owned <strong>KPI framework</strong> across the full acquisition-to-conversion funnel; defined <strong>North Star metrics</strong> enabling data-driven product prioritization.</li>
+          <li>Ran end-to-end <strong>A/B tests</strong> on product flows; identified winning variants and drove adoption into the roadmap, delivering measurable conversion improvements.</li>
+          <li>Performed <strong>user journey analysis</strong> identifying high-impact <strong>drop-off points</strong>; translated findings into specific UX/product recommendations actioned in sprints.</li>
+          <li>Built interactive Power BI dashboards consolidating funnel metrics; enabled a shift from static reporting to real-time exploratory analysis.</li>
         </ul>
         <div class="exp-tags"><span>SQL</span><span>Power BI</span><span>A/B Testing</span><span>Funnel Analysis</span><span>Product Analytics</span></div>
       </div>
@@ -504,12 +590,279 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
         <div class="exp-head"><h3>Home360apps</h3><span>Jun 2025 – Jul 2025</span></div>
         <div class="exp-role">Data Analyst · Freelance</div>
         <ul class="exp-bullets">
-          <li>Built post-launch analytics dashboard (SQL + PostHog) tracking feature adoption and engagement in real time.</li>
-          <li>Defined core KPI framework enabling data-informed sprint planning.</li>
+          <li>Built a post-launch analytics dashboard (<strong>SQL</strong> + <strong>PostHog</strong>) tracking <strong>feature adoption</strong> and <strong>engagement</strong> in real time.</li>
+          <li>Defined core <strong>KPI framework</strong> enabling data-informed sprint planning.</li>
         </ul>
         <div class="exp-tags"><span>SQL</span><span>PostHog</span><span>Product Analytics</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- FEATURED CASE STUDY -->
+<section style="padding:60px 0; background:rgba(191,215,234,.08);">
+  <div class="wrap">
+    <span class="eyebrow reveal">featured case study</span>
+    <h2 class="sec-title reveal">Adobe Acrobat AI Assistant</h2>
+    <p class="handwritten reveal" style="font-size:17px; max-width:640px; margin-top:8px;">A self-directed product analytics teardown, built from Adobe's public product pages, not a claim about Adobe's internal data or roadmap. Flip through it like a notebook.</p>
+
+    <div class="notebook reveal">
+      <div class="notebook-viewport" id="nb-viewport">
+
+        <article class="notebook-page active" data-page="1">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><rect x="8" y="4" width="20" height="26" rx="2"/><path d="M13 12h10M13 17h10M13 22h6"/><circle cx="30" cy="30" r="7"/><path d="M35 35l6 6"/></svg>
+            <div><span class="nb-num">case study</span><h3>Why I Picked This Product</h3></div>
+          </div>
+          <p>Acrobat has always been one of those products people use because they have to. You have a document, you need to read it, edit it, sign it, share it, or extract something from it, so you open Acrobat and get the job done.</p>
+          <p>AI Assistant changes that relationship. The product is no longer only helping users work with documents, it is starting to help users understand, question, compare, and create from those documents. That is a much more interesting product analytics problem.</p>
+          <p class="nb-quote">The question isn't "how many people use AI Assistant." It's: does AI Assistant become part of the user's document workflow, or is it something they try once because it's new?</p>
+        </article>
+
+        <article class="notebook-page" data-page="2">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><rect x="5" y="6" width="18" height="24" rx="2"/><path d="M10 13h8M10 18h8M10 23h5"/><path d="M25 20h13a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-9l-5 4v-4h-1a2 2 0 0 1-2-2v-2"/></svg>
+            <div><span class="nb-num">01</span><h3>Understanding the Product</h3></div>
+          </div>
+          <p>AI Assistant is built directly into Acrobat and lets users interact with documents using natural language: asking questions, getting cited answers, generating summaries, asking follow-ups, and working across multiple documents. PDF Spaces extends this further, letting users bring multiple files and sources into one shared AI-powered workspace.</p>
+          <ul class="nb-list">
+            <li>Understanding long or complicated documents</li>
+            <li>Summarizing a document</li>
+            <li>Finding specific information without manually searching</li>
+            <li>Comparing information across multiple documents</li>
+            <li>Understanding contracts and important clauses</li>
+            <li>Generating content from documents</li>
+            <li>Turning document information into emails, presentations, or reports</li>
+            <li>Working with meeting transcripts and summaries</li>
+          </ul>
+          <p>Adobe also cites its AI answers back to the source content so users can verify where an answer came from. That's not just about convenience, it's about making AI answers verifiable, and that introduces a layer of user behavior worth understanding on its own.</p>
+        </article>
+
+        <article class="notebook-page" data-page="3">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><path d="M4 40h8v-8h8v-8h8v-8h8v-8h6"/></svg>
+            <div><span class="nb-num">02</span><h3>The Product Journey</h3></div>
+          </div>
+          <p>Rather than treating "AI Assistant usage" as one metric, I'd break the experience into stages:</p>
+          <div class="nb-steps">
+            <div class="nb-step">Discovery</div><div class="nb-arrow">↓</div>
+            <div class="nb-step">First interaction</div><div class="nb-arrow">↓</div>
+            <div class="nb-step">First value</div><div class="nb-arrow">↓</div>
+            <div class="nb-step">Deeper interaction</div><div class="nb-arrow">↓</div>
+            <div class="nb-step">Workflow integration</div><div class="nb-arrow">↓</div>
+            <div class="nb-step">Repeat usage</div>
+          </div>
+          <p>The most interesting part of that funnel is the middle. A user asking one question doesn't mean the product created value. A user asking five questions, opening a citation, using the answer in their workflow, and returning later tells a very different story.</p>
+        </article>
+
+        <article class="notebook-page" data-page="4">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><path d="M6 8h34a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H20l-8 8v-8h-6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z"/><path d="M18 17a5 5 0 1 1 6 4.9c-1 .3-1.6 1-1.6 2.1v.5" stroke-width="1.6"/><circle cx="23" cy="29" r="1.4" fill="#161616" stroke="none"/></svg>
+            <div><span class="nb-num">03</span><h3>The Main Product Question</h3></div>
+          </div>
+          <p class="nb-quote">What behaviors during the first AI Assistant session are associated with long-term adoption?</p>
+          <p>I'd want to know if there's a specific "aha moment" inside that first session:</p>
+          <ul class="nb-list">
+            <li>Does asking a second question increase the likelihood of coming back?</li>
+            <li>Does opening a citation indicate higher trust and better retention?</li>
+            <li>Does completing an actual task create stronger retention than just generating a summary?</li>
+            <li>Does working with multiple documents create stronger engagement than a single document?</li>
+          </ul>
+          <p>These are very different behaviors, and treating them all as "AI usage" would hide the signal that actually matters.</p>
+        </article>
+
+        <article class="notebook-page" data-page="5">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><path d="M6 32a17 17 0 0 1 34 0"/><path d="M23 32l8-11" stroke-width="2"/><circle cx="23" cy="32" r="2.2" fill="#161616" stroke="none"/></svg>
+            <div><span class="nb-num">04</span><h3>Metrics I'd Track: Activation</h3></div>
+          </div>
+          <p class="nb-quote">AI Activation Rate = users who meaningfully interact with their first AI response ÷ users exposed to AI Assistant</p>
+          <p>The exact definition would need validating against real behavior and business goals. I'd also track:</p>
+          <ul class="nb-list">
+            <li>AI Assistant open rate</li>
+            <li>First question rate</li>
+            <li>First successful response rate</li>
+            <li>Suggested prompt usage</li>
+            <li>Time from document open to first AI interaction</li>
+          </ul>
+        </article>
+
+        <article class="notebook-page" data-page="6">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><path d="M3 8h22a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H12l-6 5v-5H3a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z"/><path d="M19 19h22a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-5v5l-6-5H19a2 2 0 0 1-2-2V21a2 2 0 0 1 2-2z" fill="#F5E6A8" fill-opacity=".5"/></svg>
+            <div><span class="nb-num">04</span><h3>Metrics I'd Track: Engagement</h3></div>
+          </div>
+          <p>Once a user activates, I'd look at depth of interaction:</p>
+          <ul class="nb-list">
+            <li>Questions per AI session, AI sessions per user</li>
+            <li>Follow-up question rate, average turns per session</li>
+            <li>AI interactions per document</li>
+            <li>Suggested-question usage</li>
+            <li>Citation interaction rate</li>
+            <li>Response copy rate</li>
+          </ul>
+          <p class="nb-quote">One question, then leave. Versus one question, a follow-up, a citation, another question. Second interaction rate might say more than raw session volume.</p>
+        </article>
+
+        <article class="notebook-page" data-page="7">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><path d="M23 4l16 6v11c0 11-7 17-16 21-9-4-16-10-16-21V10z"/><path d="M15 23l6 6 10-12" stroke-width="2"/></svg>
+            <div><span class="nb-num">05</span><h3>Trust Is a Product Metric Too</h3></div>
+          </div>
+          <p>AI products have an unusual problem: a response can be technically correct and still fail to build trust. Adobe's citations let users verify an AI answer against its source, which makes citation behavior worth understanding analytically.</p>
+          <p class="nb-quote">Citation Engagement Rate = users who open at least one citation ÷ users receiving an AI response</p>
+          <p>I'd compare that against follow-up questions, response copies, task completion, repeat usage, and feedback.</p>
+          <p class="nb-quote">Users who can easily verify an AI answer may be more likely to trust the system and adopt it repeatedly. That's a hypothesis worth testing, not assuming.</p>
+        </article>
+
+        <article class="notebook-page" data-page="8">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><path d="M23 6v34M12 12h22"/><path d="M12 12l-7 12a7 7 0 0 0 14 0z"/><path d="M34 12l-7 12a7 7 0 0 0 14 0z"/><path d="M15 40h16"/></svg>
+            <div><span class="nb-num">06</span><h3>Does AI Actually Improve Acrobat?</h3></div>
+          </div>
+          <p class="nb-quote">Does AI Assistant make Acrobat more valuable, or does it simply create another feature people occasionally use?</p>
+          <p>I'd compare users who adopt AI Assistant against similar users who don't, looking at:</p>
+          <ul class="nb-list">
+            <li>7-day and 30-day retention</li>
+            <li>Frequency of Acrobat usage, documents processed, feature breadth</li>
+            <li>Subscription conversion and retention</li>
+            <li>Repeat document workflows</li>
+          </ul>
+          <p>There's obvious selection bias here, since users who choose AI features may already be more engaged. I would not treat a simple correlation as proof of impact. I'd want controlled experiments or stronger causal methods wherever possible.</p>
+        </article>
+
+        <article class="notebook-page" data-page="9">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><circle cx="15" cy="14" r="5"/><path d="M5 34c0-7 5-11 10-11s10 4 10 11"/><circle cx="32" cy="16" r="4.2"/><path d="M25 34c.5-6 4-9 8-9s7.5 3 8 9"/></svg>
+            <div><span class="nb-num">07</span><h3>User Segmentation</h3></div>
+          </div>
+          <p>The same AI feature can create very different value for different users:</p>
+          <div class="nb-segments">
+            <div><strong>Consumer</strong>occasional summaries of long articles or personal documents</div>
+            <div><strong>Students</strong>understanding papers, summarizing chapters, study questions</div>
+            <div><strong>Professionals</strong>daily analysis of reports, proposals, presentations</div>
+            <div><strong>Legal</strong>contract analysis and clause extraction</div>
+            <div><strong>Sales</strong>reviewing proposals, RFPs, customer documentation</div>
+            <div><strong>Finance</strong>extracting information across financial documents</div>
+          </div>
+          <p class="nb-quote">Is AI Assistant retention driven more by the feature itself, or by the user's underlying job to be done? The answer could shape both product priorities and go-to-market strategy.</p>
+        </article>
+
+        <article class="notebook-page" data-page="10">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><rect x="5" y="7" width="36" height="32" rx="2"/><path d="M5 17h36M5 27h36M18 7v32M31 7v32"/></svg>
+            <div><span class="nb-num">08</span><h3>Comparing Metrics by Segment</h3></div>
+          </div>
+          <div class="nb-table-wrap">
+            <table class="nb-table">
+              <thead><tr><th>Metric</th><th>Consumer</th><th>Student</th><th>Professional</th><th>Enterprise</th></tr></thead>
+              <tbody>
+                <tr><td>Activation rate</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Questions / session</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Follow-up rate</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Citation interaction</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Repeat AI usage</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>D30 Acrobat retention</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Paid conversion</td><td></td><td></td><td></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>I wouldn't expect the same benchmark across groups. A low number of questions per session could be a good outcome if a user gets exactly what they need in one interaction, so I'd avoid blindly optimizing for "more AI interactions." More interaction isn't always more value.</p>
+        </article>
+
+        <article class="notebook-page" data-page="11">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><path d="M18 6h10M20 6v11l-11 18a3 3 0 0 0 2.6 4.5h20.8a3 3 0 0 0 2.6-4.5L26 17V6"/><path d="M14 29h18" stroke-width="1.6"/><circle cx="27" cy="34" r="1.4" fill="#161616" stroke="none"/></svg>
+            <div><span class="nb-num">09 · 10</span><h3>A Hypothesis, and an Experiment</h3></div>
+          </div>
+          <p class="nb-quote">Users who reach a successful task outcome during their first AI Assistant session are more likely to return within 30 days.</p>
+          <p>Defining "successful task outcome" is the interesting part. It could combine signals like an answer generated, a citation opened, a response copied, generated content used, a workflow completed, positive feedback, or another AI interaction started. I'd investigate which behaviors actually predict repeat usage before assuming any single one does.</p>
+          <p>If first-session data showed that follow-up questions predict return visits, I'd test better context-aware follow-up suggestions, since Adobe already surfaces suggested follow-ups. The real experiment becomes:</p>
+          <p class="nb-quote">Can better suggested questions increase meaningful second interactions without increasing unnecessary ones?</p>
+          <div class="nb-metrics-grid">
+            <div><strong>Primary</strong><span>Second meaningful interaction rate</span></div>
+            <div><strong>Secondary</strong><span>Session depth, task completion, D7/D30 AI retention, Acrobat retention</span></div>
+            <div><strong>Guardrail</strong><span>Session abandonment, negative feedback, irrelevant suggestions, response regeneration</span></div>
+          </div>
+          <p>The guardrail matters because pushing users into longer AI conversations isn't useful if the extra interaction doesn't actually help them.</p>
+        </article>
+
+        <article class="notebook-page" data-page="12">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8" style="width:46px;height:46px;"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+            <div><span class="nb-num">11</span><h3>A Product + ML Opportunity</h3></div>
+          </div>
+          <p class="nb-quote">Can we predict which users are likely to become repeat AI Assistant users after their first session?</p>
+          <p>Possible signals: document type and length, first prompt category, number of questions, follow-up behavior, citation interaction, response copy behavior, task type, number of documents involved, historical Acrobat engagement, user segment, subscription status.</p>
+          <p>Rather than a generic churn score, the useful output would be a probability of AI Assistant becoming a repeat-use feature for this user, which could inform onboarding prompts, feature sequencing, targeted education, or where to invest in deeper adoption. I'd treat this as an exploration, not build it just because ML is available. The first question is always whether the prediction can change a product decision.</p>
+        </article>
+
+        <article class="notebook-page" data-page="13">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><rect x="6" y="10" width="22" height="28" rx="2"/><rect x="14" y="4" width="22" height="28" rx="2" fill="#FDFDFB"/><path d="M19 12h12M19 17h12M19 22h8"/></svg>
+            <div><span class="nb-num">12</span><h3>PDF Spaces Changes the Unit</h3></div>
+          </div>
+          <p>PDF Spaces lets users bring multiple files, links, or text together into an AI-powered workspace. That shifts the unit of analysis from a single document interaction to: document, document set, AI interaction, insight, action.</p>
+          <ul class="nb-list">
+            <li>Do multi-document users have higher retention?</li>
+            <li>Does adding a second document increase the odds of a meaningful AI session?</li>
+            <li>Where does adding more documents stop creating value?</li>
+            <li>Are multi-document users more likely to use Acrobat for recurring workflows?</li>
+          </ul>
+          <p>The answers would tell me whether PDF Spaces is just another feature, or whether it changes how people actually work inside Acrobat.</p>
+        </article>
+
+        <article class="notebook-page" data-page="14">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8" style="width:46px;height:46px;"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M7 9h4M7 12h6"/></svg>
+            <div><span class="nb-num">13 · 14</span><h3>Instrumentation and the Dashboard</h3></div>
+          </div>
+          <p>If I were joining the product analytics team, I'd want clean event-level data across the AI journey:</p>
+          <div class="nb-events">
+            <span>ai_assistant_opened</span><span>ai_prompt_submitted</span><span>ai_response_generated</span>
+            <span>ai_followup_question_clicked</span><span>ai_citation_opened</span><span>ai_response_copied</span>
+            <span>ai_response_shared</span><span>ai_feedback_submitted</span><span>ai_document_added</span>
+            <span>ai_pdf_space_created</span><span>ai_session_completed</span>
+          </div>
+          <p>The exact taxonomy would depend on Adobe's existing instrumentation. What matters is having enough behavioral detail to connect what the user did, what value they got, and whether they came back. I'd split the dashboard into four sections: Acquisition & Activation, Engagement, Retention, and Business Impact.</p>
+          <p class="nb-quote">Is AI Assistant becoming a habit, and is that habit valuable to the broader Acrobat business?</p>
+        </article>
+
+        <article class="notebook-page" data-page="15">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><path d="M23 6l19 33H4z"/><path d="M23 19v9" stroke-width="2"/><circle cx="23" cy="33" r="1.4" fill="#161616" stroke="none"/></svg>
+            <div><span class="nb-num">15</span><h3>Traps I'd Avoid</h3></div>
+          </div>
+          <div class="nb-traps">
+            <div class="nb-trap"><strong>Optimizing for AI usage.</strong><p>More prompts don't automatically mean more value. A user who gets the right answer in one question may be happier than one who needs seven.</p></div>
+            <div class="nb-trap"><strong>Treating all users equally.</strong><p>Students, lawyers, and casual PDF users have very different use cases.</p></div>
+            <div class="nb-trap"><strong>Confusing correlation with impact.</strong><p>AI users may already be Acrobat's most engaged users, so higher retention doesn't prove AI caused it.</p></div>
+            <div class="nb-trap"><strong>Ignoring trust.</strong><p>Accuracy alone isn't enough for generative AI. Citations, feedback, and verification behavior are real product signals.</p></div>
+            <div class="nb-trap"><strong>Building ML before identifying the decision.</strong><p>A predictive model only matters if someone can act differently because of it.</p></div>
+          </div>
+        </article>
+
+        <article class="notebook-page" data-page="16">
+          <div class="nb-head">
+            <svg class="nb-icon" viewBox="0 0 46 46" fill="none" stroke="#161616" stroke-width="1.8"><circle cx="23" cy="23" r="18"/><path d="M30 16l-5 9-9 5 5-9z" fill="#F5E6A8"/></svg>
+            <div><span class="nb-num">16</span><h3>The Question I'd Keep Coming Back To</h3></div>
+          </div>
+          <p class="nb-quote">What is the moment of value that turns Acrobat AI Assistant from a feature users try into a workflow users rely on?</p>
+          <p>It might be the first successful answer. It might be trusting a citation. It might be finishing in five minutes what used to take twenty. Or it might be something else entirely, which is exactly why I'd want the data to find it rather than deciding upfront.</p>
+          <p>The real opportunity isn't just making document interaction conversational, it's potentially changing Acrobat's place in the user's workflow: from a tool you open already knowing what to do, to the place where you figure out what a document means and what to do next.</p>
+          <p class="nb-quote">Not "how many people used AI Assistant," but: how often does AI Assistant help someone finish a meaningful document task, and does that make them more likely to come back?</p>
+          <p class="nb-source">Sources: built from Adobe's public Acrobat AI Assistant documentation and product pages. The framework, hypotheses, metrics, segmentation, experiment design, and ML ideas above are my own proposed Product Analytics approach, not claims about Adobe's internal data or roadmap.</p>
+        </article>
+
+      </div>
+
+      <div class="notebook-controls">
+        <button class="btn" id="nb-prev" onclick="nbGo(-1)" disabled>← Prev</button>
+        <span class="notebook-counter" id="nb-counter">1 / 16</span>
+        <button class="btn solid" id="nb-next" onclick="nbGo(1)">Next →</button>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -539,20 +892,20 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
     <h2 class="sec-title reveal">Skills</h2>
     <div class="skills-board">
       <div class="sticky skill-note reveal" style="--r:-1.5deg;"><div class="tape"></div>
-        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><polyline points="4,17 10,11 14,15 20,7"/></svg>Programming</h3>
-        <ul><li>Python</li><li>SQL</li><li>Pandas</li><li>NumPy</li><li>FastAPI</li><li>Git</li></ul>
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><path d="M4 19V9M10 19V4M16 19v-7"/></svg>Product Analytics</h3>
+        <ul><li>Funnel Analysis</li><li>Cohort Analysis</li><li>Retention Analysis</li><li>A/B Testing</li><li>Experimentation</li><li>KPI Definition</li><li>North Star Metrics</li><li>User Journey Analysis</li><li>Feature Adoption</li><li>RFM Segmentation</li><li>PRD Writing</li></ul>
       </div>
       <div class="sticky skill-note reveal" style="--r:1deg;"><div class="tape"></div>
-        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>Machine Learning</h3>
-        <ul><li>Scikit-learn</li><li>XGBoost</li><li>SHAP</li><li>Prophet</li><li>Causal Inference</li><li>Embeddings</li></ul>
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>Data</h3>
+        <ul><li>SQL</li><li>Python</li><li>Pandas</li><li>NumPy</li><li>Excel</li><li>FastAPI</li><li>Git</li></ul>
       </div>
       <div class="sticky skill-note reveal" style="--r:-1deg;"><div class="tape"></div>
-        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M7 9h4M7 12h6"/></svg>Analytics</h3>
-        <ul><li>Power BI</li><li>Tableau</li><li>PostHog</li><li>Streamlit</li><li>Excel</li><li>Plotly</li></ul>
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M7 9h4M7 12h6"/></svg>Analytics & Visualization</h3>
+        <ul><li>Power BI</li><li>Tableau</li><li>PostHog</li><li>Streamlit</li><li>Plotly</li></ul>
       </div>
       <div class="sticky skill-note reveal" style="--r:1.5deg;"><div class="tape"></div>
-        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><path d="M4 19V9M10 19V4M16 19v-7"/></svg>Product</h3>
-        <ul><li>A/B Testing</li><li>KPI Definition</li><li>Funnels</li><li>Cohort Analysis</li><li>PRD Writing</li></ul>
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>Statistical / ML</h3>
+        <ul><li>Causal Inference</li><li>Scikit-learn</li><li>XGBoost</li><li>SHAP</li><li>Prophet</li><li>Embeddings</li><li>LLM/AI</li></ul>
       </div>
     </div>
   </div>
@@ -635,32 +988,36 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
 <section style="padding:80px 0; background:rgba(191,215,234,.08);">
   <div class="wrap">
     <div style="max-width:800px; margin:0 auto; text-align:center;">
-      <span class="eyebrow reveal">where I add value</span>
-      <h2 class="sec-title reveal" style="margin-bottom:24px;">Solving For</h2>
+      <span class="eyebrow reveal">where I focus</span>
+      <h2 class="sec-title reveal" style="margin-bottom:24px;">What I'm Drawn To</h2>
       <div class="reveal" style="display:flex; flex-direction:column; gap:12px;">
-        <p class="handwritten" style="font-size:17px; margin:0;">→ Seed/Series A fintech & lending platforms (where data is the moat)</p>
-        <p class="handwritten" style="font-size:17px; margin:0;">→ Growth-stage consumer products with retention problems</p>
-        <p class="handwritten" style="font-size:17px; margin:0;">→ Autotech/mobility startups building the future of vehicles</p>
+        <p class="handwritten" style="font-size:17px; margin:0;">→ Product analytics: funnels, retention, cohorts, KPI frameworks</p>
+        <p class="handwritten" style="font-size:17px; margin:0;">→ Growth & conversion: A/B testing and experimentation</p>
+        <p class="handwritten" style="font-size:17px; margin:0;">→ Retention & lifecycle: cohort analysis, RFM segmentation, churn signals</p>
+        <p class="handwritten" style="font-size:17px; margin:0;">→ AI-powered products: where ML meaningfully changes the user experience</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-    
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow reveal">what i bring</span>
+    <h2 class="sec-title reveal">Strengths I'd Bring to a Team</h2>
     <div class="services-content reveal">
-      <p class="handwritten" style="text-align:center; margin-bottom:20px;">I work with early-stage teams on product challenges that need data + product thinking.</p>
-      
+      <p class="handwritten" style="text-align:center; margin-bottom:20px;">Looking for full-time Product Data Analyst / Product Analyst roles where data and product thinking meet.</p>
+
       <ul class="services-list">
-        <li>Product Analytics & Data Strategy</li>
-        <li>Funnel Analysis & Optimization</li>
-        <li>Metrics Framework Design</li>
-        <li>A/B Testing & Experimentation</li>
-        <li>Machine Learning Consulting</li>
+        <li>Product Analytics & Experimentation</li>
+        <li>Funnel, Retention & Cohort Analysis</li>
+        <li>KPI & North Star Metrics Frameworks</li>
+        <li>A/B Testing</li>
+        <li>ML/AI-powered product features</li>
       </ul>
 
       <div class="services-note handwritten" style="font-size:16px;">
-        <strong>Flexible scope and timeline.</strong> Whether you need 2 weeks, a month, or an ongoing partnership, let's discuss what your team needs and design an engagement that actually fits.
+        <strong>Comfortable owning a metric end-to-end</strong>, from the SQL query to the dashboard to the decision it changes.
       </div>
     </div>
   </div>
@@ -673,7 +1030,7 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
     <h2 class="sec-title reveal">Get In Touch</h2>
     
     <div class="contact-minimal reveal">
-      <p class="handwritten">Always happy to chat about data, product, or ML challenges.</p>
+      <p class="handwritten">Looking for Product Data Analyst / Product Analyst opportunities. Always happy to chat about data, product, or experimentation.</p>
       
       <div class="contact-info">
         <a href="mailto:thepalakgupta@gmail.com">thepalakgupta@gmail.com</a>
@@ -690,7 +1047,6 @@ filter:drop-shadow(0 12px 24px rgba(0,0,0,.08));
   </div>
 </section>
 
-<footer><p style="margin:0 0 8px 0; font-size:13px;">Have a specific role in mind? I have tailored resumes for JDS, Product Analyst, Data Analyst & APM roles. <a href="mailto:thepalakgupta@gmail.com" style="color:var(--ink); font-weight:500; text-decoration:underline;">Email me.</a></p>built in public, shipped fast, no detail overlooked.</footer>
 
 <script>
 // custom cursor
@@ -738,6 +1094,38 @@ function filterProjects(category) {
   });
   event.target.classList.add('active');
 }
+
+// case study notebook
+(function(){
+  const pages = document.querySelectorAll('.notebook-page');
+  const viewport = document.getElementById('nb-viewport');
+  const counter = document.getElementById('nb-counter');
+  const prevBtn = document.getElementById('nb-prev');
+  const nextBtn = document.getElementById('nb-next');
+  if(!pages.length) return;
+  let current = 0;
+
+  function render(){
+    counter.textContent = (current+1)+' / '+pages.length;
+    prevBtn.disabled = current===0;
+    nextBtn.disabled = current===pages.length-1;
+  }
+
+  window.nbGo = function(dir){
+    const next = current + dir;
+    if(next<0 || next>=pages.length) return;
+    viewport.classList.add('flipping');
+    setTimeout(()=>{
+      pages[current].classList.remove('active');
+      current = next;
+      pages[current].classList.add('active');
+      render();
+    }, 200);
+    setTimeout(()=>viewport.classList.remove('flipping'), 460);
+  };
+
+  render();
+})();
 </script>
 </body>
 </html>
